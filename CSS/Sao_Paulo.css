@@ -1,0 +1,282 @@
+/* =========================================
+   VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   (Mesmo padrão da tela Index)
+   ========================================= */
+:root {
+    --cor-primaria: #1B4F72;    /* Azul profundo */
+    --cor-secundaria: #F39C12;  /* Laranja vibrante para destaque */
+    --cor-fundo: #F4F6F7;       /* Cinza claro de fundo */
+    --cor-card: #FFFFFF;        /* Branco puro para os cards */
+    --cor-texto: #2C3E50;       /* Texto escuro para boa legibilidade */
+    --fonte-principal: Arial, Verdana, sans-serif;
+}
+
+/* Reseta margens e aplica o Box Model (Aula 11) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.7;
+}
+
+/* =========================================
+   CABEÇALHO (HEADER)
+   ========================================= */
+#cabecalho {
+    background: linear-gradient(135deg, #1B4F72, #2980B9);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#cabecalho h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+#cabecalho p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* =========================================
+   MENU DE NAVEGAÇÃO (FLEXBOX - Aulas 15 e 18)
+   ========================================= */
+#menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #2C3E50;
+    padding: 15px;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#menu a:hover {
+    background-color: var(--cor-secundaria);
+    color: #FFFFFF;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL E SEÇÕES INFORMATIVAS
+   ========================================= */
+#conteudo {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.secao-info {
+    background-color: var(--cor-card);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    border-left: 6px solid var(--cor-primaria);
+}
+
+.secao-info h2 {
+    color: var(--cor-primaria);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cor-fundo);
+    padding-bottom: 8px;
+}
+
+.secao-info p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* =========================================
+   GRID DE LOCAIS IMPERDÍVEIS (FLEXBOX)
+   ========================================= */
+.grid-locais {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card-local {
+    background: var(--cor-fundo);
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px;
+    border-top: 4px solid var(--cor-secundaria);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-local:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-local h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+/* =========================================
+   TABELA DE PASSAGENS AÉREAS
+   ========================================= */
+.tabela-precos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--cor-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.tabela-precos th, 
+.tabela-precos td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #E5E7E9;
+}
+
+.tabela-precos th {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 1rem;
+}
+
+.tabela-precos tbody tr:hover {
+    background-color: #F2F4F4;
+}
+
+/* =========================================
+   CONTAINER DE HOSPEDAGENS (FLEXBOX)
+   ========================================= */
+.hospedagens-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.box-hospedagem {
+    flex: 1;
+    min-width: 300px;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--cor-fundo);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.box-hospedagem.economica {
+    border-top: 4px solid #27AE60; /* Verde para economia */
+}
+
+.box-hospedagem.luxo {
+    border-top: 4px solid var(--cor-secundaria); /* Laranja para luxo */
+}
+
+.box-hospedagem h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+.box-hospedagem ul {
+    list-style: none;
+}
+
+.box-hospedagem li {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #BDC3C7;
+}
+
+.box-hospedagem li:last-child {
+    border-bottom: none;
+}
+
+/* =========================================
+   EVENTOS E FESTIVAIS INTERATIVOS (<details>/<summary>)
+   ========================================= */
+.curiosidade-item {
+    background-color: var(--cor-fundo);
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-left: 4px solid var(--cor-secundaria);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.curiosidade-item:hover {
+    background-color: #EAEDED;
+    border-left-color: var(--cor-primaria);
+}
+
+.curiosidade-item summary {
+    font-weight: bold;
+    color: var(--cor-primaria);
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.curiosidade-item p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #555;
+}
+
+/* =========================================
+   BOTÃO DE VOLTAR AO INÍCIO
+   ========================================= */
+.btn-voltar {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: var(--cor-secundaria);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   RODAPÉ (FOOTER)
+   ========================================= */
+#rodape {
+    background-color: #1A252F;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+    font-size: 0.95rem;
+    border-top: 4px solid var(--cor-secundaria);
+}
