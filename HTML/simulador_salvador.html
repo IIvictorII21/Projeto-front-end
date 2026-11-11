@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Orçamento - Salvador</title>
+    <!-- Link para o CSS exclusivo do simulador de Salvador -->
+    <link rel="stylesheet" href="../CSS/simulador_salvador.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho Principal -->
+    <header id="cabecalho">
+        <h1>Simulador de Viagem: Salvador 🥁</h1>
+        <p>Monte seu orçamento personalizado escolhendo passagens, hospedagem e período para a primeira capital do
+            Brasil</p>
+    </header>
+
+    <!-- Menu de Navegação (Flexbox) -->
+    <nav id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="Planejamento.html">Planeje sua Viagem</a>
+        <a href="Suporte.html">Suporte</a>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main id="conteudo">
+
+        <section class="secao-info">
+            <h2>📊 Calculadora de Custos para Salvador</h2>
+            <p>Preencha os campos abaixo com as suas preferências financeiras para estimar o valor total da sua viagem
+                para a Bahia.</p>
+        </section>
+
+        <!-- Formulário do Simulador -->
+        <section class="secao-info">
+            <form action="#" method="get" class="form-simulador">
+
+                <!-- 1. Período e Duração -->
+                <div class="grupo-formulario">
+                    <label for="data-viagem"><strong>📅 Data de Início da Viagem:</strong></label>
+                    <input type="date" id="data-viagem" name="data_viagem" required>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="dias-estadia"><strong>⏳ Quantidade de Dias de Estadia:</strong></label>
+                    <select id="dias-estadia" name="dias_estadia" required>
+                        <option value="">Selecione a duração...</option>
+                        <option value="3">Fim de semana (3 dias)</option>
+                        <option value="5">Viagem curta (5 dias)</option>
+                        <option value="7">Uma semana (7 dias)</option>
+                        <option value="10">Dez dias ou mais</option>
+                    </select>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="qtd-pessoas"><strong>👥 Quantidade de Viajantes:</strong></label>
+                    <input type="number" id="qtd-pessoas" name="qtd_pessoas" min="1" max="10" value="1" required>
+                </div>
+
+                <!-- 2. Escolha de Passagem Aérea (Com base na tabela de Salvador) -->
+                <div class="grupo-formulario">
+                    <label><strong>✈️ Categoria de Passagem Aérea (Ida e Volta por pessoa):</strong></label>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="passagem-eco" name="passagem" value="580" required>
+                        <label for="passagem-eco">Econômica / Promoção (Média de R$ 580,00)</label>
+                    </div>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="passagem-med" name="passagem" value="1050">
+                        <label for="passagem-med">Intermediária / Conforto com bagagem (Média de R$ 1.050,00)</label>
+                    </div>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="passagem-exec" name="passagem" value="2300">
+                        <label for="passagem-exec">Premium / Executiva (Média de R$ 2.300,00)</label>
+                    </div>
+                </div>
+
+                <!-- 3. Escolha de Hospedagem (Com base nas opções de Salvador) -->
+                <div class="grupo-formulario">
+                    <label><strong>🏨 Categoria de Hospedagem (Diária):</strong></label>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="hosp-hostel" name="hospedagem" value="160" required>
+                        <label for="hosp-hostel">Hostel / Econômica no Pelourinho ou Barra (Média de R$ 160,00 /
+                            diária)</label>
+                    </div>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="hosp-econ" name="hospedagem" value="240">
+                        <label for="hosp-econ">Hotel Executivo Padrão / Rio Vermelho (Média de R$ 240,00 /
+                            diária)</label>
+                    </div>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="hosp-luxo" name="hospedagem" value="950">
+                        <label for="hosp-luxo">Hotel Histórico / Resort na Orla (Média de R$ 950,00 / diária)</label>
+                    </div>
+                </div>
+
+                <!-- 4. Estimativa de Alimentação e Transporte Local -->
+                <div class="grupo-formulario">
+                    <label for="perfil-gasto"><strong>🍽️ Perfil de Alimentação e Transporte Interno (por
+                            dia/pessoa):</strong></label>
+                    <select id="perfil-gasto" name="perfil_gasto" required>
+                        <option value="">Selecione o estilo...</option>
+                        <option value="75">Econômico (Acarajé de rua, restaurantes populares e transporte por aplicativo
+                            básico)</option>
+                        <option value="160">Moderado (Restaurantes baianos tradicionais e deslocamentos frequentes)
+                        </option>
+                        <option value="380">Sofisticado (Alta gastronomia, roteiros e transfers privativos)</option>
+                    </select>
+                </div>
+
+                <!-- Botão de Envio / Simulação -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <button type="submit" class="btn-calcular">🧮 Calcular Orçamento Estimado</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Botões de Navegação -->
+        <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 20px;">
+            <a href="Planejamento.html" class="btn-voltar">⬅️ Escolher Outro Destino</a>
+            <a href="index.html" class="btn-voltar">🏠 Voltar para o Início</a>
+        </div>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="rodape">
+        <p>&copy; 2026 Planejador de Viagens - Simulador Salvador.</p>
+    </footer>
+
+</body>
+
+</html>

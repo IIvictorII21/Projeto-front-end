@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Orçamento - Gramado</title>
+    <!-- Link para o CSS exclusivo do simulador de Gramado -->
+    <link rel="stylesheet" href="../CSS/simulador_gramado.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho Principal -->
+    <header id="cabecalho">
+        <h1>Simulador de Viagem: Gramado 🌲</h1>
+        <p>Monte seu orçamento personalizado escolhendo passagens até a Serra Gaúcha, hospedagem e período</p>
+    </header>
+
+    <!-- Menu de Navegação (Flexbox) -->
+    <nav id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="Planejamento.html">Planeje sua Viagem</a>
+        <a href="Suporte.html">Suporte</a>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main id="conteudo">
+
+        <section class="secao-info">
+            <h2>📊 Calculadora de Custos para Gramado</h2>
+            <p>Preencha os campos abaixo com as suas preferências financeiras para estimar o valor total da sua viagem
+                para a Serra Gaúcha.</p>
+        </section>
+
+        <!-- Formulário do Simulador -->
+        <section class="secao-info">
+            <form action="#" method="get" class="form-simulador">
+
+                <!-- 1. Período e Duração -->
+                <div class="grupo-formulario">
+                    <label for="data-viagem"><strong>📅 Data de Início da Viagem:</strong></label>
+                    <input type="date" id="data-viagem" name="data_viagem" required>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="dias-estadia"><strong>⏳ Quantidade de Dias de Estadia:</strong></label>
+                    <select id="dias-estadia" name="dias_estadia" required>
+                        <option value="">Selecione a duração...</option>
+                        <option value="3">Fim de semana (3 dias)</option>
+                        <option value="5">Viagem curta (5 dias)</option>
+                        <option value="7">Uma semana (7 dias)</option>
+                        <option value="10">Dez dias ou mais</option>
+                    </select>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="qtd-pessoas"><strong>👥 Quantidade de Viajantes:</strong></label>
+                    <input type="number" id="qtd-pessoas" name="qtd_pessoas" min="1" max="10" value="1" required>
+                </div>
+
+                <!-- 2. Escolha de Passagem Aérea (Com base na tabela de Gramado/POA) -->
+                <div class="grupo-formulario">
+                    <label><strong>✈️ Categoria de Passagem Aérea para Porto Alegre/Caxias (Ida e Volta por
+                            pessoa):</strong></label>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="passagem-eco" name="passagem" value="640" required>
+                        <label for="passagem-eco">Econômica / Promoção (Média de R$ 640,00)</label>
+                    </div>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="passagem-med" name="passagem" value="1150">
+                        <label for="passagem-med">Intermediária / Conforto com bagagem (Média de R$ 1.150,00)</label>
+                    </div>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="passagem-exec" name="passagem" value="2600">
+                        <label for="passagem-exec">Premium / Executiva (Média de R$ 2.600,00)</label>
+                    </div>
+                </div>
+
+                <!-- 3. Escolha de Hospedagem (Com base nas opções de Gramado) -->
+                <div class="grupo-formulario">
+                    <label><strong>🏨 Categoria de Hospedagem (Diária):</strong></label>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="hosp-hostel" name="hospedagem" value="165" required>
+                        <label for="hosp-hostel">Hostel / Pousada Econômica (Média de R$ 165,00 / diária)</label>
+                    </div>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="hosp-econ" name="hospedagem" value="280">
+                        <label for="hosp-econ">Pousada Colonial / Hotel Padrão (Média de R$ 280,00 / diária)</label>
+                    </div>
+
+                    <div class="radio-opcao">
+                        <input type="radio" id="hosp-luxo" name="hospedagem" value="1800">
+                        <label for="hosp-luxo">Hotel Conceito / Resort de Luxo na Serra (Média de R$ 1.800,00 /
+                            diária)</label>
+                    </div>
+                </div>
+
+                <!-- 4. Estimativa de Alimentação e Transporte Local -->
+                <div class="grupo-formulario">
+                    <label for="perfil-gasto"><strong>🍽️ Perfil de Alimentação e Transporte Interno (por
+                            dia/pessoa):</strong></label>
+                    <select id="perfil-gasto" name="perfil_gasto" required>
+                        <option value="">Selecione o estilo...</option>
+                        <option value="90">Econômico (Lanches rápidos, cafés coloniais simples e transporte urbano)
+                        </option>
+                        <option value="220">Moderado (Sequências de fondue tradicionais, chocolates e Uber local)
+                        </option>
+                        <option value="450">Sofisticado (Alta gastronomia serrana, vinhos finos e transfers privativos)
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Botão de Envio / Simulação -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <button type="submit" class="btn-calcular">🧮 Calcular Orçamento Estimado</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Botões de Navegação -->
+        <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 20px;">
+            <a href="Planejamento.html" class="btn-voltar">⬅️ Escolher Outro Destino</a>
+            <a href="index.html" class="btn-voltar">🏠 Voltar para o Início</a>
+        </div>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="rodape">
+        <p>&copy; 2026 Planejador de Viagens - Simulador Gramado.</p>
+    </footer>
+
+</body>
+
+</html>
