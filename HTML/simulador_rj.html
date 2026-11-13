@@ -13,7 +13,7 @@
 
     <!-- Cabeçalho Principal -->
     <header id="cabecalho">
-        <h1>Simulador de Viagem: Rio de Janeiro 🏖️</h1>
+        <h1>Simulador de Viagem: Rio de Janeiro </h1>
         <p>Monte seu orçamento personalizado escolhendo passagens, hospedagem e período para a Cidade Maravilhosa</p>
     </header>
 
@@ -28,7 +28,7 @@
     <main id="conteudo">
 
         <section class="secao-info">
-            <h2>📊 Calculadora de Custos para o Rio de Janeiro</h2>
+            <h2> Calculadora de Custos para o Rio de Janeiro</h2>
             <p>Preencha os campos abaixo com as suas preferências financeiras para estimar o valor total da sua viagem
                 para a capital fluminense.</p>
         </section>
@@ -39,12 +39,12 @@
 
                 <!-- 1. Período e Duração -->
                 <div class="grupo-formulario">
-                    <label for="data-viagem"><strong>📅 Data de Início da Viagem:</strong></label>
+                    <label for="data-viagem"><strong> Data de Início da Viagem:</strong></label>
                     <input type="date" id="data-viagem" name="data_viagem" required>
                 </div>
 
                 <div class="grupo-formulario">
-                    <label for="dias-estadia"><strong>⏳ Quantidade de Dias de Estadia:</strong></label>
+                    <label for="dias-estadia"><strong> Quantidade de Dias de Estadia:</strong></label>
                     <select id="dias-estadia" name="dias_estadia" required>
                         <option value="">Selecione a duração...</option>
                         <option value="3">Fim de semana (3 dias)</option>
@@ -55,13 +55,13 @@
                 </div>
 
                 <div class="grupo-formulario">
-                    <label for="qtd-pessoas"><strong>👥 Quantidade de Viajantes:</strong></label>
+                    <label for="qtd-pessoas"><strong> Quantidade de Viajantes:</strong></label>
                     <input type="number" id="qtd-pessoas" name="qtd_pessoas" min="1" max="10" value="1" required>
                 </div>
 
                 <!-- 2. Escolha de Passagem Aérea (Com base na tabela do Rio) -->
                 <div class="grupo-formulario">
-                    <label><strong>✈️ Categoria de Passagem Aérea (Ida e Volta por pessoa):</strong></label>
+                    <label><strong> Categoria de Passagem Aérea (Ida e Volta por pessoa):</strong></label>
 
                     <div class="radio-opcao">
                         <input type="radio" id="passagem-eco" name="passagem" value="570" required>
@@ -81,7 +81,7 @@
 
                 <!-- 3. Escolha de Hospedagem (Com base nas opções do Rio) -->
                 <div class="grupo-formulario">
-                    <label><strong>🏨 Categoria de Hospedagem (Diária):</strong></label>
+                    <label><strong> Categoria de Hospedagem (Diária):</strong></label>
 
                     <div class="radio-opcao">
                         <input type="radio" id="hosp-hostel" name="hospedagem" value="180" required>
@@ -102,7 +102,7 @@
 
                 <!-- 4. Estimativa de Alimentação e Transporte Local -->
                 <div class="grupo-formulario">
-                    <label for="perfil-gasto"><strong>🍽️ Perfil de Alimentação e Transporte Interno (por
+                    <label for="perfil-gasto"><strong> Perfil de Alimentação e Transporte Interno (por
                             dia/pessoa):</strong></label>
                     <select id="perfil-gasto" name="perfil_gasto" required>
                         <option value="">Selecione o estilo...</option>
@@ -114,24 +114,24 @@
                 </div>
 
                 <!-- Botão de Envio / Simulação -->
-                <div style="text-align: center; margin-top: 30px;">
-                    <button type="submit" class="btn-calcular">🧮 Calcular Orçamento Estimado</button>
+                <div class="container-botoes-acao">
+                    <button type="submit" class="btn-calcular"> Calcular Orçamento Estimado</button>
                 </div>
 
             </form>
         </section>
 
         <!-- Botões de Navegação -->
-        <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 20px;">
-            <a href="Planejamento.html" class="btn-voltar">⬅️ Escolher Outro Destino</a>
-            <a href="../index.html" class="btn-voltar">🏠 Voltar para o Início</a>
+        <div class="container-botoes-duplos">
+            <a href="Planejamento.html" class="btn-voltar"> Escolher Outro Destino</a>
+            <a href="../index.html" class="btn-voltar"> Voltar para o Início</a>
         </div>
 
     </main>
 
     <!-- Rodapé -->
     <footer id="rodape">
-        <p>&copy; 2026 Planejador de Viagens - Simulador Rio de Janeiro.</p>
+        <p>&copy; 2026 Planejador de Viagens. (Todas as informações são apenas para fins do projeto)</p>
     </footer>
 
 </body>

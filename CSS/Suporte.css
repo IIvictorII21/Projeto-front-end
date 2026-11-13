@@ -222,6 +222,11 @@ body {
     transform: translateY(-2px);
 }
 
+.container-voltar {
+    text-align: center;
+    margin-top: 40px;
+}
+
 /* =========================================
    RODAPÉ (FOOTER)
    ========================================= */
